@@ -1,0 +1,22 @@
+class Solution {
+    public int singleNumber(int[] nums) {
+        HashSet<Integer> hash = new HashSet();
+        for(int i:nums)
+        {
+            if(hash.contains(i))
+            {
+                hash.remove(i);
+            }
+            else
+            {
+                hash.add(i);
+            }
+        }
+        int ans = 0;
+        for(int i:hash)
+        {
+            ans = i;
+        }
+        return ans;
+    }
+}
